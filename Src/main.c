@@ -246,9 +246,11 @@ void func_led(void const * argument)
 
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
+	HAL_GPIO_WritePin(led1_GPIO_Port, led1_Pin, GPIO_PIN_SET);
   for(;;)
   {
-    osDelay(1);
+		HAL_GPIO_TogglePin(led0_GPIO_Port,led0_Pin);
+    osDelay(1000);
   }
   /* USER CODE END 5 */ 
 }
